@@ -7,10 +7,10 @@ public class Battleship {
 		do {
 			replay = Game.shot();
 			if(!replay) {
-				System.out.println("RatÃ© !");
+				System.out.println("Raté !");
 				Game.changeCurrentPlayer();
 			}else {
-				System.out.println("TouchÃ© ! Vous pouvez rejouer.");
+				System.out.println("Touché ! Vous pouvez rejouer.");
 			}
 		}while(!Game.isOver());
 	}

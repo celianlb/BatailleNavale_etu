@@ -76,7 +76,7 @@ public class Game {
 		//fakeInitPlayerGrid(player1);
 		initPlayerGrid(player1);
 
-		System.out.println("Appuyez sur entrÃ©e pour changer de joueur.");
+		System.out.println("Appuyez sur entrée pour changer de joueur.");
 		scan.nextLine();
 		hideGame();
 
@@ -90,12 +90,12 @@ public class Game {
 			System.out.println("La grille de " + robot.getName()+" est remplie.\n");
 		}
 		
-		System.out.println("Appuyez sur entrÃ©e pour commencer la partie.");
+		System.out.println("Appuyez sur entrée pour commencer la partie.");
 		scan.nextLine();
 		hideGame();
 	}
 	public static boolean shot() {
-		System.out.println(currentPlayer.getName() + ", entrez une coordonnÃ©e Ã  attaquer.\n");
+		System.out.println(currentPlayer.getName() + ", entrez une coordonnée Ã  attaquer.\n");
 		currentPlayer.displayShotGrid();
 		String str = scan.nextLine();
 		int c=str.charAt(0)-65;
@@ -110,7 +110,7 @@ public class Game {
 		Player tmp = currentPlayer;
 		currentPlayer = opponent;
 		opponent = tmp;
-		System.out.println("Appuyez sur entrÃ©e pour changer de joueur.");
+		System.out.println("Appuyez sur entrée pour changer de joueur.");
 		scan.nextLine();
 		hideGame();
 	}

@@ -11,6 +11,11 @@ public class Grid {
 		initMat();
 	}
 	private void initMat() {
+	    for (int i = 0; i<GRID_SIZE; i++) {
+	        for (int j = 0; j<GRID_SIZE; j++) {
+	        	mat[i][j]=0;
+	        }
+	    }    
 	}
 	
 	public void randomInit() {
@@ -18,7 +23,6 @@ public class Grid {
 	}
 	
 	public int getValue(int column, int line) {
-		
 		return 0;
 	}
 	
@@ -26,6 +30,16 @@ public class Grid {
 	}
 	
 	public boolean addNewShip(int column, int line, int s, int d) {
+		mat[line][column]=1;
+		if(d==1) {
+			for(int i=0; i<=s; i++) {
+				mat[line+i][column]=1;
+			}
+		}else if(d==0){
+			for(int i=0; i<=s; i++) {
+				mat[line][column+i]=1;
+			}
+		}
 		return true;
 	}
 	
@@ -37,7 +51,16 @@ public class Grid {
 	}
 	
 	public String toString(){
-		String str="";
+		String str=" ";
+		str= str+" |A B C D E F G H I J\n   _____________________\n ";
+	    for (int i = 0; i<GRID_SIZE; i++) {
+	    	str= str+i+"|";
+	        for (int j = 0; j<GRID_SIZE; j++) {
+	        	str= str+mat[i][j]+" ";
+	        }
+	        str= str+"| \n ";
+	    }
+	    str=str+"  --------------------";
 		return str;
 	}
 }
