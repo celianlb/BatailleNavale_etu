@@ -64,13 +64,13 @@ public class Grid {
 			if(limite>GRID_SIZE) {
 				res=false;
 			}else {
+				res=true;
 				for(int i=0; i<size; i++) {
 					int place = mat[line][column+i];
 					if(place==1) {
 						res = false;
 					}
 				}
-				res=true;
 			}
 
 
@@ -79,13 +79,13 @@ public class Grid {
 			if(limite>GRID_SIZE) {
 				res=false;
 			}else {
+				res=true;
 				for(int i=0; i<size; i++) {
 					int place = mat[line+i][column];
 					if(place==1) {
 						res = false;
 					}
 				}
-				res=true;
 			}
 
 		}
