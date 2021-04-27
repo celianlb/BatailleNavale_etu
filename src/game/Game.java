@@ -39,7 +39,6 @@ public class Game {
 			l=Integer.parseInt(str.substring(1, 2));
 			System.out.println("Entrez la direction (0: vert, 1:horiz) : ");
 			dir=Integer.parseInt(scan.nextLine());
-
 			added = p.addNewShip(c,l, ships[i], dir);
 			if(added) {
 				i++;

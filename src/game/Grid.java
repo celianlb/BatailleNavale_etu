@@ -30,24 +30,68 @@ public class Grid {
 	}
 	
 	public boolean addNewShip(int column, int line, int s, int d) {
-		mat[line][column]=1;
-		if(d==1) {
-			for(int i=0; i<=s; i++) {
-				mat[line+i][column]=1;
-			}
-		}else if(d==0){
-			for(int i=0; i<=s; i++) {
-				mat[line][column+i]=1;
-			}
+		Coordinates coord= new Coordinates(column, line);
+		if(isValidShip(coord, s, d)==true) {
+			placeShip(coord, s, d);
+			return true;
+		}else {
+			return false;
 		}
-		return true;
 	}
 	
 	private void placeShip (Coordinates coord, int size, int dir) {
+		int column=coord.getColumn();
+		int line=coord.getLine();
+		mat[line][column]=1;
+		if(dir==1) {
+			for(int i=0; i<size; i++) {
+				mat[line][column+i]=1;
+			}
+			
+		}else if(dir==0){
+			for(int i=0; i<size; i++) {
+				mat[line+i][column]=1;
+			}
+		}
 	}
 	
 	private boolean isValidShip(Coordinates coord, int size, int dir) {
-        return true;
+		boolean res = false;
+		int column=coord.getColumn();
+		int line=coord.getLine();
+		if(dir==1) {
+			int limite=column+size;
+			if(limite>GRID_SIZE) {
+				res=false;
+			}else {
+				for(int i=0; i<size; i++) {
+					int place = mat[line][column+i];
+					if(place==1) {
+						res = false;
+					}
+				}
+				res=true;
+			}
+
+
+		}else if(dir==0){
+			int limite=line+size;
+			if(limite>GRID_SIZE) {
+				res=false;
+			}else {
+				for(int i=0; i<size; i++) {
+					int place = mat[line+i][column];
+					if(place==1) {
+						res = false;
+					}
+				}
+				res=true;
+			}
+
+		}
+
+		System.out.println(res);
+		return res;
 	}
 	
 	public String toString(){

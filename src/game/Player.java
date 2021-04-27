@@ -13,10 +13,12 @@ public class Player {
 	}
 	
 	public boolean addNewShip(int column, int line, int s, int d) {
-		return false;
+		boolean res=playerGrid.addNewShip(column, line, s, d);
+		return res;
 	}
 	
 	public boolean recordShot(int column, int line, Player p) {
+		
 		return false;
 	}
 	
