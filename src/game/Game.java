@@ -47,7 +47,7 @@ public class Game {
 			}
 		}while(i<ships.length);
 		
-		System.out.println("Votre grille est complÃ¨te.");
+		System.out.println("Votre grille est complète.");
 		p.displayGrid();
 
 	}

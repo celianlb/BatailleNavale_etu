@@ -18,12 +18,17 @@ public class Player {
 	}
 	
 	public boolean recordShot(int column, int line, Player p) {
-		
-		return false;
+		boolean success = p.hasShip(column, line);
+		shotGrid.addShot(column, line, success);
+		return success;
 	}
 	
 	private boolean hasShip(int c, int l) {
-		return false;
+		if(playerGrid.getValue(c,l)==1) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 	public void initGridRandom() {

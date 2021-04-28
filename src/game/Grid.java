@@ -23,10 +23,13 @@ public class Grid {
 	}
 	
 	public int getValue(int column, int line) {
-		return 0;
+		return mat[line][column];
 	}
 	
 	public void addShot(int column, int line, boolean success) {
+		if(success==true) {
+			mat[line][column]=1;
+		}
 	}
 	
 	public boolean addNewShip(int column, int line, int s, int d) {
