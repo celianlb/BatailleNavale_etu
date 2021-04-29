@@ -42,7 +42,19 @@ public class Player {
 	}
 	
 	public boolean hasWin(){
-		return false;
+		 boolean res=false;
+		 int cpt = 0;
+	        for (int i = 0; i<Grid.getGridSize(); i++) {
+	            for (int j = 0; j<Grid.getGridSize(); j++) {
+	                if(shotGrid.getValue(j, i)==1) {
+	                	cpt++;
+	                }	                
+	            }
+	        }
+	        if(cpt == 18) {
+                res =true;
+            }
+	        return res;
 	}
 	
 	public String getName() {

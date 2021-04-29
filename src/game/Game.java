@@ -34,11 +34,15 @@ public class Game {
 			System.out.println("\tPlacer bateau --------> taille " + ships[i] + " : ");
 			System.out.println("Entrez la coordonnée : ");
 			str = scan.nextLine();
-			if(str.length()<2) continue;
-			c=str.charAt(0)-65;
-			l=Integer.parseInt(str.substring(1, 2));
+			String strupper = str.toUpperCase();  
+			if(strupper.length()<2) continue;
+			c=strupper.charAt(0)-65;
+			l=Integer.parseInt(strupper.substring(1, 2));
+			
 			System.out.println("Entrez la direction (0: vert, 1:horiz) : ");
+			
 			dir=Integer.parseInt(scan.nextLine());
+			
 			added = p.addNewShip(c,l, ships[i], dir);
 			if(added) {
 				i++;
@@ -98,7 +102,6 @@ public class Game {
 		currentPlayer.displayShotGrid();
 		String str = scan.nextLine();
 		int c=str.charAt(0)-65;
-		System.out.println(c);
 		int l=Integer.parseInt(str.substring(1, 2));
 		boolean replay = currentPlayer.recordShot(c, l, opponent);
 		
@@ -122,7 +125,7 @@ public class Game {
 	}
 	public static boolean isOver() {
 		boolean over = currentPlayer.hasWin() || opponent.hasWin();
-
+		
 		return over; 
 	}
 

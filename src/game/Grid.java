@@ -29,6 +29,10 @@ public class Grid {
 	public void addShot(int column, int line, boolean success) {
 		if(success==true) {
 			mat[line][column]=1;
+		
+			
+		}else {
+			mat[line][column]=4;
 		}
 	}
 	
@@ -95,6 +99,9 @@ public class Grid {
 
 		System.out.println(res);
 		return res;
+	}
+	public static int getGridSize() {
+		return GRID_SIZE;
 	}
 	
 	public String toString(){
